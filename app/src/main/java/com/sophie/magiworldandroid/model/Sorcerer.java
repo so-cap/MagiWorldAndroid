@@ -16,7 +16,7 @@ public class Sorcerer extends Character {
 
     @Override
     public String basicAttackDamage(Character rival) {
-        return (getPlayersName() + " utilise Boule de Feu et inflige " + this.intelligence + " dommage(s)!\n");
+        return (getPlayersName() + " utilise Boule de Feu et inflige " + this.intelligence + " dommage(s)!");
     }
 
     @Override

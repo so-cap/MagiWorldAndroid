@@ -8,9 +8,12 @@ import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.sophie.magiworldandroid.model.Character;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,8 +27,13 @@ public class BeginGameFragment extends AppCompatActivity implements View.OnClick
     private Character rival = player2;
 
     private Button basicAttack, specialAttack, restartBtn, homeBtn;
-    private TextView playersTurn, playerLevels1, playerLevels2, winnerLoser, attackHistory;
+    private TextView playersTurn, playerLevels1, playerLevels2, winnerLoser;
     private View restartLayout;
+
+    RecyclerView recyclerView;
+    private List<String> mNumberOfTurn = new ArrayList<>();
+    private List<String> mAttackDamage = new ArrayList<>();
+    int i;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +47,6 @@ public class BeginGameFragment extends AppCompatActivity implements View.OnClick
         basicAttack = findViewById(R.id.basic_attack);
         specialAttack = findViewById(R.id.special_attack);
 
-        attackHistory = findViewById(R.id.attack_history);
-
         restartLayout = findViewById(R.id.layout_restart);
         restartBtn = findViewById(R.id.restart_btn);
         winnerLoser = findViewById(R.id.winner_loser);
@@ -52,6 +58,8 @@ public class BeginGameFragment extends AppCompatActivity implements View.OnClick
         playersTurn.setText(getString(R.string.players_turn, player1.getPlayersName()));
 
         setMessage();
+
+        initRecyclerView();
     }
 
     private void setMessage() {
@@ -79,16 +87,19 @@ public class BeginGameFragment extends AppCompatActivity implements View.OnClick
     private void playerAttack(Character mainPlayer, Character opponent, View attack) {
         Character temp;
 
+        mNumberOfTurn.add("TOUR " + ++i);
+
         if (attack.getId() == R.id.basic_attack) {
             mainPlayer.basicAttack(opponent);
-            displayAttack(mainPlayer.basicAttackDamage(opponent));
+            mAttackDamage.add(mainPlayer.basicAttackDamage(opponent));
         } else {
             mainPlayer.specialAttack(opponent);
-            displayAttack(mainPlayer.specialAttackDamage(opponent));
+            mAttackDamage.add(mainPlayer.specialAttackDamage(opponent));
         }
 
         // To update the display of each player's levels of life, strength etc...
         setMessage();
+        initList(mNumberOfTurn, mAttackDamage);
 
         if (mainPlayer.getLife() <= 0 || opponent.getLife() <= 0) {
             endOfGame();
@@ -130,6 +141,7 @@ public class BeginGameFragment extends AppCompatActivity implements View.OnClick
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CharacterSelectionActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
@@ -138,13 +150,23 @@ public class BeginGameFragment extends AppCompatActivity implements View.OnClick
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MagiWorldActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
-
     }
 
-    private void displayAttack(String attackMessage) {
-        attackHistory.setText(getString(R.string.display_attacks, attackMessage, attackHistory.getText().toString()));
+    private void initRecyclerView() {
+        recyclerView = findViewById(R.id.recycler_view);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        initList(mNumberOfTurn, mAttackDamage);
+    }
+
+    private void initList(List<String> numberOfTurn, List<String> attackDamage) {
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(numberOfTurn, attackDamage);
+        recyclerView.setAdapter(adapter);
     }
 }

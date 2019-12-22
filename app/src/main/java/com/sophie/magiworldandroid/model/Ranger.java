@@ -14,7 +14,7 @@ public class Ranger extends Character {
 
     @Override
     public String basicAttackDamage(Character rival) {
-        return (getPlayersName() + " utilise Tir à l'Arc et inflige " + this.agility + " dommage(s)!\n");
+        return (getPlayersName() + " utilise Tir à l'Arc et inflige " + this.agility + " dommage(s)!");
                 //"Le joueur " + rival.playersNumber + " perd " + this.agility + " points de vie.\nIl lui reste " + rival.life + " points de vie.\n");
     }
 
@@ -26,7 +26,7 @@ public class Ranger extends Character {
 
     @Override
     public String specialAttackDamage(Character rival) {
-        return (getPlayersName() + " utilise Concentration et gagne " + gain + " en agilité ! \n");
+        return (getPlayersName() + " utilise Concentration et gagne " + gain + " en agilité !");
     }
 
     @Override

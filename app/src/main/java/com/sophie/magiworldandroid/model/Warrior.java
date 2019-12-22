@@ -11,7 +11,7 @@ public class Warrior extends Character {
 
     @Override
     public String basicAttackDamage(Character rival) {
-        return (getPlayersName()+ " utilise Coup d'Épée et inflige " +this.strength+ " dommage(s)!\n");
+        return (getPlayersName()+ " utilise Coup d'Épée et inflige " +this.strength+ " dommage(s)!");
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Warrior extends Character {
     @Override
     public String specialAttackDamage(Character rival) {
         return (getPlayersName() + " utilise Coup de Rage et inflige " + (this.strength * 2) + " dommage(s) !\n" +
-                getPlayersName() + " perd " + this.strength / 2 + " point(s) de vie suite à l'attaq.\n");
+                getPlayersName() + " perd " + this.strength / 2 + " point(s) de vie suite à l'attaq.");
     }
 
     @Override
