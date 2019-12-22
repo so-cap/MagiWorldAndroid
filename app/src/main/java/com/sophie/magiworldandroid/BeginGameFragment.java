@@ -1,6 +1,5 @@
 package com.sophie.magiworldandroid;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -53,9 +52,6 @@ public class BeginGameFragment extends AppCompatActivity implements View.OnClick
         playersTurn.setText(getString(R.string.players_turn, player1.getPlayersName()));
 
         setMessage();
-
-        // TODO : Gerer le backstack avec une activité
-        // TODO : Afficher l'historique du combat et enlever les boites de dialogues.
     }
 
     private void setMessage() {

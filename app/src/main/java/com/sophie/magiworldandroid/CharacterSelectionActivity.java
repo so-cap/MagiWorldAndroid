@@ -62,8 +62,6 @@ public class CharacterSelectionActivity extends AppCompatActivity implements Vie
 
         popUp = new AlertDialog.Builder(this);
 
-        //TODO : remplacer les erreurs Toast par des setError()
-
         vLevel.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -92,8 +90,6 @@ public class CharacterSelectionActivity extends AppCompatActivity implements Vie
             }
         });
 
-        //TODO : Lors de la création du personnage 2, lors du click sur retour; afficher la page de
-        // création du joueur 1 préremplie
     }
 
     @Override

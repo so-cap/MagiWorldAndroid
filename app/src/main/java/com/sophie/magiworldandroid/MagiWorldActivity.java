@@ -23,10 +23,5 @@ public class MagiWorldActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-        // TODO : Permettre de revenir à l'écran précédent
-        // TODO : créer tous les strings
-
     }
 }

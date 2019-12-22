@@ -70,8 +70,6 @@ public class SecondCharacterSelectionActivity extends AppCompatActivity implemen
 
         popUp = new AlertDialog.Builder(this);
 
-        //TODO : remplacer les erreurs Toast par des setError()
-
         vLevel.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
