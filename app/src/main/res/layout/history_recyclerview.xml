@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#074f5c">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/corners_bkg">
+
+    <TextView
+        android:id="@+id/number_of_turn"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TOUR 1 :"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:background="@drawable/corners_bkg"/>
+    <TextView
+        android:id="@+id/attack_history"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Le joueur 1 attaque le joueur 2 ! "
+        android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
