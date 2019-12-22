@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">MagiWorldAndroid</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="players_turn">"%s\nÀ VOUS DE JOUER !"</string>
+    <string name="default_playerturn">"JOUEUR X \n À VOUS DE JOUER !"</string>
+
+
+    <string name="life_display">"VIE : %1$d"</string>
+    <string name="default_lifedisplay">VIE : 0</string>
+
+    <string name="player_levels_default">"PERSO (Joueur X) \nVIE : 0 \nFORCE : 0 \nAGILITE : 0 \nINTELLIGENCE : 0 "</string>
+    <string name="player_levels">"%1$s (%2$s) \nVIE : %3$d \nFORCE : %4$d \nAGILITE : %5$d \nINTELLIGENCE : %6$d "</string>
+
+    <string name="default_winnerloser">"JOUEUR X a PERDU :( \n Félicitations JOUEUR X vous avez GAGNÉ ! :)"</string>
+    <string name="display_winnerloser">"%1$s a PERDU :( \n Félicitations %2$s vous avez GAGNÉ ! :)"</string>
+
+    <string name="playagain">REJOUER ?</string>
+    <string name="basic_attack">ATTAQUE BASIQUE</string>
+    <string name="special_attack">ATTAQUE SPECIALE</string>
+    <string name="back_home">PAGE D\'ACCUEIL</string>
+    <string name="attaque">ATTAQUE !</string>
+    <string name="suivant">SUIVANT</string>
+    <string name="player_creation">"JOUEUR %d\nCréez votre personnage !"</string>
+    <string name="introduction">"Introduction du joueur %d"</string>
+
+    <string name="surname">PSEUDO :</string>
+    <string name="hintsurname">ton pseudo</string>
+    <string name="guerrier">GUERRIER</string>
+    <string name="rodeur">RÔDEUR</string>
+    <string name="mage">MÂGE</string>
+    <string name="level">NIVEAU :</string>
+    <string name="hint_level">entre 1 et 100</string>
+    <string name="strength">FORCE :</string>
+    <string name="hint_numbers">entre 0 et 100</string>
+    <string name="agility">AGILITE :</string>
+    <string name="intelligence">INTELLIGENCE :</string>
+    <string name="ok">OK !</string>
+    <string name="welcome">Bienvenue à MagiWorld!</string>
+    <string name="lets_play">LET\'S PLAY !</string>
+    <string name="quit">Quitter</string>
+    <string name="next">SUIVANT</string>
+    <string name="aie">Aïe !</string>
+    <string name="superiorto0">Choississez un niveau supérieur à 0 !</string>
+    <string name="totalunderlevel">La somme de votre force, intelligence et agilité doit être égale à votre niveau !</string>
+    <string name="back">RETOUR</string>
+    <string name="inferiorto100">Votre niveau doit être inférieur à 100 !</string>
+    <string name="charactersname">"GUERRIER               RÔDEUR                 MÂGE"</string>
+    <string name="display_attacks">"\n%1$s\n%2$s"</string>
+    <string name="attack_historytitle">Historique des attaques</string>
+    <string name="fillin_everything">Remplissez tous les champs!</string>
+    <string name="choose_character">Choisissez votre personnage!</string>
+</resources>
