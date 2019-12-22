@@ -16,9 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondCharacterSelectionActivity" />
-        <activity android:name=".CharacterSelectionActivity" />
-        <activity android:name=".BeginGameFragment" />
     </application>
 
 </manifest>

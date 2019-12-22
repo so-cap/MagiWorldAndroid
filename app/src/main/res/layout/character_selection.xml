@@ -1,82 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
     android:padding="20dp">
 
     <TextView
         android:id="@+id/players_turn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="72dp"
         android:gravity="center"
-        android:text="@string/player_creation"
-        android:textColor="@android:color/white"
+        android:text="JOUEUR 1 \n Créez votre personnage !"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/players_turn">
-
-        <ImageView
-            android:id="@+id/warrior"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_warrior"
-            android:contentDescription="@string/guerrier">
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/ranger"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_ranger"
-            android:contentDescription="@string/rodeur">
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/sorcerer"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_mage"
-            android:contentDescription="@string/mage">
-        </ImageView>
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/name_title"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:gravity="start"
-        android:text="@string/surname"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@+id/intelligence_title"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="PSEUDO : "
+        android:background="@color/lightWhite"
+        android:textColor="@android:color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
     </TextView>
 
@@ -84,66 +41,85 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/hintsurname"
-        android:importantForAutofill="no"
+        android:hint="John Snow"
         android:inputType="text"
-        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/characters"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.02"
-        android:textColorHint="@color/lightWhite"
-        app:layout_constraintBaseline_toBaselineOf="@+id/name_title"
-        app:layout_constraintEnd_toEndOf="@+id/level"
-        app:layout_constraintStart_toEndOf="@+id/name_title">
-
+        app:layout_constraintStart_toEndOf="@+id/name_title"
+        app:layout_constraintTop_toBottomOf="@+id/players_turn"
+        app:layout_constraintVertical_bias="0.716">
     </EditText>
 
-
-    <TextView
+    <RadioGroup
+        android:id="@+id/characters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/charactersname"
-        android:textColor="@android:color/white"
-        android:textStyle="bold|italic"
+        android:layout_marginBottom="16dp"
+        android:checkedButton="@id/guerrier"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-    </TextView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36">
+
+        <RadioButton
+            android:id="@+id/guerrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GUERRIER">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rodeur"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:text="RÔDEUR">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/mage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MÂGE">
+        </RadioButton>
+    </RadioGroup>
 
     <TextView
         android:id="@+id/life"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="#01803c"
+        android:background="@android:color/holo_red_dark"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="@string/default_lifedisplay"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/name_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintVertical_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/players_turn"
-        app:layout_constraintVertical_bias="0.6">
+        app:layout_constraintTop_toBottomOf="@+id/players_turn">
+
     </TextView>
 
     <TextView
         android:id="@+id/lvl_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:text="NIVEAU : "
+        android:background="@color/lightWhite"
+        android:textColor="@android:color/black"
         android:gravity="start"
-        android:text="@string/level"
-        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="@+id/intelligence_title"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/name_title">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characters">
 
     </TextView>
 
@@ -151,11 +127,9 @@
         android:id="@+id/level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_level"
+        android:hint="entre 1 et 100"
         android:importantForAutofill="no"
         android:inputType="number"
-        android:textColor="@android:color/white"
-        android:textColorHint="@color/lightWhite"
         app:layout_constraintBaseline_toBaselineOf="@+id/lvl_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.02"
@@ -167,13 +141,16 @@
         android:id="@+id/strength_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="35dp"
+        android:text="FORCE : "
+        android:background="@color/lightWhite"
+        android:textColor="@android:color/black"
         android:gravity="start"
-        android:text="@string/strength"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/agility_title"
         app:layout_constraintEnd_toEndOf="@+id/intelligence_title"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintBottom_toTopOf="@+id/agility_title"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lvl_title">
 
     </TextView>
@@ -182,11 +159,9 @@
         android:id="@+id/strength"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_numbers"
+        android:hint="entre 0 et 100"
         android:importantForAutofill="no"
         android:inputType="number"
-        android:textColorHint="@color/lightWhite"
-        android:textColor="@android:color/white"
         app:layout_constraintBaseline_toBaselineOf="@+id/strength_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.02"
@@ -198,13 +173,16 @@
         android:id="@+id/agility_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="35dp"
+        android:background="@color/lightWhite"
+        android:text="AGILITE : "
+        android:textColor="@android:color/black"
         android:gravity="start"
-        android:text="@string/agility"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/intelligence_title"
         app:layout_constraintEnd_toEndOf="@+id/intelligence_title"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintBottom_toTopOf="@+id/intelligence_title"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/strength_title">
 
     </TextView>
@@ -213,11 +191,9 @@
         android:id="@+id/agility"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_numbers"
+        android:hint="entre 0 et 100"
         android:importantForAutofill="no"
         android:inputType="number"
-        android:textColorHint="@color/lightWhite"
-        android:textColor="@android:color/white"
         app:layout_constraintBaseline_toBaselineOf="@+id/agility_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.02"
@@ -229,10 +205,13 @@
         android:id="@+id/intelligence_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="35dp"
-        android:text="@string/intelligence"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        android:background="@color/lightWhite"
+        android:text="INTELLIGENCE : "
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/agility_title">
 
     </TextView>
@@ -241,11 +220,9 @@
         android:id="@+id/intelligence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_numbers"
+        android:hint="entre 0 et 100"
         android:importantForAutofill="no"
         android:inputType="number"
-        android:textColorHint="@color/lightWhite"
-        android:textColor="@android:color/white"
         app:layout_constraintBaseline_toBaselineOf="@+id/intelligence_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.02"
@@ -257,20 +234,13 @@
         android:id="@+id/next_and_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ok"
-        android:layout_marginTop="40dp"
+        android:text="OK !"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intelligence_title"/>
+        app:layout_constraintTop_toBottomOf="@+id/intelligence_title"
+        app:layout_constraintVertical_bias="0.341" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>

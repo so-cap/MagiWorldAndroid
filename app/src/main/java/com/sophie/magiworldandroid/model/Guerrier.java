@@ -1,8 +1,8 @@
 package com.sophie.magiworldandroid.model;
 
-public class Warrior extends Character {
+public class Guerrier extends Character {
 
-    public Warrior(int level, int strength, int agility, int intelligence, String playersName) {
+    public Guerrier(int level, int strength, int agility, int intelligence, String playersName) {
         super(level, strength, agility, intelligence, playersName);
     }
 
@@ -23,7 +23,7 @@ public class Warrior extends Character {
     @Override
     public String specialAttackDamage(Character rival) {
         return (getPlayersName() + " utilise Coup de Rage et inflige " + (this.strength * 2) + " dommage(s) !\n" +
-                getPlayersName() + " perd " + this.strength / 2 + " point(s) de vie suite à l'attaq.\n");
+                getPlayersName() + " perd " + this.strength / 2 + " point(s) de vie.\n");
     }
 
     @Override

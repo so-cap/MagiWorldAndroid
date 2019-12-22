@@ -1,9 +1,9 @@
 package com.sophie.magiworldandroid.model;
 
-public class Ranger extends Character {
+public class Rodeur extends Character {
     private int gain;
 
-    public Ranger(int level, int strength, int agility, int intelligence, String playersName) {
+    public Rodeur(int level, int strength, int agility, int intelligence, String playersName) {
         super(level, strength, agility, intelligence, playersName);
     }
 

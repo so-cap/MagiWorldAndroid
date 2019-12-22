@@ -1,10 +1,10 @@
 package com.sophie.magiworldandroid.model;
 
-public class Sorcerer extends Character {
+public class Mage extends Character {
     private final int maximumLife;
     private int gainReel;
 
-    public Sorcerer(int level, int strength, int agility, int intelligence, String playersName) {
+    public Mage(int level, int strength, int agility, int intelligence, String playersName) {
         super(level, strength, agility, intelligence, playersName);
         maximumLife = life;
     }
@@ -47,7 +47,7 @@ public class Sorcerer extends Character {
 
     @Override
     public String introduction() {
-        return ("Abracadabra je suis le Mâge !\nJe suis de niveau " + level +
+        return ("Abracadabra je suis le Mage !\nJe suis de niveau " + level +
                 " , je possède " + life + " de vitalité, " + strength +" de force, " + agility + " d'agilité et " +
                 intelligence +" d'intelligence !");
     }

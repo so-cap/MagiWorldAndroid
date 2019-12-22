@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/ic_main_bkg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MagiWorldActivity">
+
+   <!-- <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="MAGIWORLD"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    </androidx.appcompat.widget.Toolbar>
+    -->
+<FrameLayout
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+   <Button
+       style="@style/Widget.AppCompat.RatingBar.Indicator"
+       android:textStyle="italic"
+       android:id="@+id/leave"
+       android:layout_gravity="bottom"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:background="#D9006400"
+       android:textColor="@android:color/white"
+       android:text="Quitter">
+   </Button>
+
+</FrameLayout>
+</LinearLayout>
