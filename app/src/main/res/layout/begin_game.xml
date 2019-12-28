@@ -136,7 +136,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/special_attack"
         app:layout_constraintStart_toStartOf="@+id/attack_history_title"
-        app:layout_constraintTop_toBottomOf="@+id/attack_history_title">
+        app:layout_constraintTop_toBottomOf="@+id/attack_history_title"
+        tools:listitem="@layout/history_recyclerview">
     </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
