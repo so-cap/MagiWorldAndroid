@@ -68,7 +68,7 @@ public class SecondCharacterSelectionActivity extends AppCompatActivity implemen
 
         playersTurn.setText(getString(string.player_creation, 2));
 
-        popUp = new AlertDialog.Builder(this);
+        popUp = new AlertDialog.Builder(this, R.style.MyDialogTheme);
 
         vLevel.addTextChangedListener(new TextWatcher() {
             @Override
@@ -192,7 +192,7 @@ public class SecondCharacterSelectionActivity extends AppCompatActivity implemen
     }
 
     private void introduction() {
-        final AlertDialog.Builder popUp = new AlertDialog.Builder(this);
+        final AlertDialog.Builder popUp = new AlertDialog.Builder(this, R.style.MyDialogTheme);
         popUp.setTitle(getString(string.introduction, 2));
         popUp.setMessage(player2.introduction());
         popUp.setPositiveButton(getString(string.next), new DialogInterface.OnClickListener() {

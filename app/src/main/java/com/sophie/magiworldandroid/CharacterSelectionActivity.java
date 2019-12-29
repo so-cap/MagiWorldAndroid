@@ -60,7 +60,7 @@ public class CharacterSelectionActivity extends AppCompatActivity implements Vie
 
         playersTurn.setText(getString(R.string.player_creation, 1));
 
-        popUp = new AlertDialog.Builder(this);
+        popUp = new AlertDialog.Builder(this, R.style.MyDialogTheme);
 
         vLevel.addTextChangedListener(new TextWatcher() {
             @Override
@@ -187,7 +187,7 @@ public class CharacterSelectionActivity extends AppCompatActivity implements Vie
     }
 
     private void introduction() {
-        final AlertDialog.Builder popUp = new AlertDialog.Builder(this);
+        final AlertDialog.Builder popUp = new AlertDialog.Builder(this, R.style.MyDialogTheme);
         popUp.setTitle(getString(R.string.introduction, 1));
         popUp.setMessage(player1.introduction());
         popUp.setPositiveButton(getString(R.string.next), new DialogInterface.OnClickListener() {

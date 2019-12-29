@@ -1,5 +1,6 @@
 package com.sophie.magiworldandroid;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -149,9 +151,7 @@ public class BeginGameFragment extends AppCompatActivity implements View.OnClick
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MagiWorldActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                home();
             }
         });
     }
@@ -168,5 +168,32 @@ public class BeginGameFragment extends AppCompatActivity implements View.OnClick
     private void initList(List<String> numberOfTurn, List<String> attackDamage) {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(numberOfTurn, attackDamage);
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder popUp = new AlertDialog.Builder(this, R.style.MyDialogTheme);
+
+        popUp.setTitle("PAUSE");
+        popUp.setNegativeButton("Quitter la partie", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                home();
+            }
+        });
+
+        popUp.setPositiveButton("Reprendre !", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        popUp.show();
+    }
+
+    private void home(){
+        Intent intent = new Intent(getApplicationContext(), MagiWorldActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
